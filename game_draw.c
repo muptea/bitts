@@ -177,39 +177,17 @@ void RandomGameOver(void)
 
 void GameSetAnimSize(uint8_t *GameNum, uint8_t *AnimSize)
 {
-	if (GameNum[0] == 0)
+	if (GameNum[0] == 0) { AnimSize[0] = 5; return; };
+	if (GameNum[0] == 1) { AnimSize[0] = 5; return; };
+	if (GameNum[0] == 2) { AnimSize[0] = 6; return; };
+	if (GameNum[0] == 3) { AnimSize[0] = 11; return; };
+	if (GameNum[0] == 4) { AnimSize[0] = 11; return; };
+	if (GameNum[0] == 5) { AnimSize[0] = 13; return; };
+	if (GameNum[0] == 6) { AnimSize[0] = 5; return; };
+    
+	if (GameNum[0] == 7) 
 	{
-		AnimSize[0] = 5;
-		return;
-	};
-	if (GameNum[0] == 1)
-	{
-		AnimSize[0] = 5;
-		return;
-	};
-	if (GameNum[0] == 2)
-	{
-		AnimSize[0] = 6;
-		return;
-	};
-	if (GameNum[0] == 3)
-	{
-		AnimSize[0] = 11;
-		return;
-	};
-	if (GameNum[0] == 4)
-	{
-		AnimSize[0] = 11;
-		return;
-	};
-	if (GameNum[0] == 5)
-	{
-		AnimSize[0] = 13;
-		return;
-	};
-	if (GameNum[0] == 6)
-	{
-		AnimSize[0] = 5;
+		AnimSize[0] = 2; 
 		return;
 	};
 }
@@ -319,6 +297,7 @@ void GamePause(void)
 4 - Shooter
 5 - drive
 6 - Maze
+7 - Simon
 */
 void GameMenu(void)
 {

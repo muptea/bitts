@@ -13,16 +13,14 @@
 #include "game_sound.h"
 
 void setup()
-{
-    sound_Init();
-    
+{    
     adc_Init(); 
     spi_MasterInit();
     max7219_Init();
     pkeys_Init();
     RNDpADC(10);
-    
-    sound_MenuBeep();
+
+    sound_Init();
 }
 
 void loop()
