@@ -1,7 +1,7 @@
 #ifndef _GAME_DRAW_
 #define _GAME_DRAW_
 
-#define d_AllGamesNum	7
+#define d_AllGamesNum	8
 
 #define gd_XSize	8
 #define gd_XSizeM1	(gd_XSize-1)

@@ -935,7 +935,7 @@ void bricks_Game(uint8_t GameMode)
 
         if (pKeySwitch(0x40) == 2) 
         {
-            v_NotEnd = 0; 
+            v_NotEnd = 0;
             continue;    
         }
 
@@ -1074,5 +1074,6 @@ void bricks_Game(uint8_t GameMode)
 			};
 		};
 	};
+	sound_GameOver();
 	RandomGameOver();
 };

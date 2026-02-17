@@ -5,6 +5,7 @@
 #include "game_hw.h"
 #include "game_draw.h"
 #include "game_shooter.h"
+#include "game_sound.h"
 
 void shoot_DrawShip(int8_t x)
 {
@@ -126,6 +127,7 @@ void shoot_Game(void)
 		if (pKeySwitch(0x40) == 2) 
         {
             v_NotEnd = 0;
+			sound_GameOver();
             continue;
         }
 

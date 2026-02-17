@@ -9,21 +9,20 @@
 #include "game_snake.h"
 #include "game_drive.h"
 #include "game_shooter.h"
+#include "game_simon.h"
+#include "game_sound.h"
 
 void setup()
 {
-/*	sbi(DDRD,2);
-	sbi(PORTD,2);//Led
-	delay_ms(500);
-	cbi(PORTD,2);//Led
-	delay_ms(500);
-	sbi(PORTD,2);//Led*/
-	
-	adc_Init();//ADC is for Random number generator
- 	spi_MasterInit();
- 	max7219_Init();
-	pkeys_Init();
-	RNDpADC(10);
+    sound_Init();
+    
+    adc_Init(); 
+    spi_MasterInit();
+    max7219_Init();
+    pkeys_Init();
+    RNDpADC(10);
+    
+    sound_MenuBeep();
 }
 
 void loop()

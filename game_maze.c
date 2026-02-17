@@ -6,6 +6,7 @@
 #include "game_draw.h"
 #include "game_pics.h"
 #include "game_maze.h"
+#include "game_sound.h"
 
 void maze_LoadLevel(uint8_t *level,uint8_t *map){
 uint16_t i,n=0;
@@ -360,6 +361,7 @@ void maze_Game(void)
 		if (pKeySwitch(0x40) == 2) 
         {
             v_NotEnd = 0;
+			sound_GameOver();
             continue;
         }
 

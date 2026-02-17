@@ -3,6 +3,7 @@
 #include <util/delay.h>
 #include <Arduino.h>
 #include "game_hw.h"
+#include "game_sound.h"
 
 volatile uint8_t v_rnd=0;//Random number
 volatile uint8_t v_LevelSpeed=2;//Game speed 0...5

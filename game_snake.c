@@ -5,6 +5,7 @@
 #include "game_hw.h"
 #include "game_draw.h"
 #include "game_snake.h"
+#include "game_sound.h"
 
 void snake_DrawBody(uint8_t L, int8_t *BX, int8_t *BY)
 {
@@ -136,6 +137,7 @@ void snake_Game(void)
 		if (pKeySwitch(0x40) == 2) 
         {
             v_NotEnd = 0;
+			sound_GameOver();
             continue;
         }
 

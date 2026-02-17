@@ -5,6 +5,7 @@
 #include "game_hw.h"
 #include "game_draw.h"
 #include "game_drive.h"
+#include "game_sound.h"
 
 void drive_Explode01(int8_t x)
 {
@@ -194,6 +195,7 @@ void drive_Game(void){
         if (pKeySwitch(0x40) == 2) 
         {
             v_NotEnd = 0;
+			sound_GameOver();
             continue;
         }
 
