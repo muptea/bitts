@@ -516,5 +516,6 @@ void maze_Game(void)
 			if (v_PN==0) v_NotEnd=0;
 		};
 	};
+	sound_GameOver();
 	RandomGameOver();
 };

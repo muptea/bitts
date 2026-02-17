@@ -286,6 +286,7 @@ void snake_Game(void)
 		};
 	};
 	
+	sound_GameOver();
 	snake_GameOver(v_L,v_BodyX,v_BodyY);//Delete snake
 	RandomGameOver();
 };

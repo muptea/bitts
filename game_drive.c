@@ -314,5 +314,6 @@ void drive_Game(void){
 			v_Redraw=0;
 		};
 	};
+	sound_GameOver();
 	RandomGameOver();
 };
