@@ -26,7 +26,10 @@ const uint8_t animation_005[224] PROGMEM;
 //N=6 Maze
 const uint8_t animation_006[96] PROGMEM;
 
-//N=1 Pause stars
+//N=4 Simon
+extern const uint8_t animation_007[64] PROGMEM;
+
+//N=1 Pause 
 const uint8_t animation_008[16] PROGMEM;
 
 //=======================================

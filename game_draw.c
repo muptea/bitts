@@ -185,11 +185,11 @@ void GameSetAnimSize(uint8_t *GameNum, uint8_t *AnimSize)
 	if (GameNum[0] == 5) { AnimSize[0] = 13; return; };
 	if (GameNum[0] == 6) { AnimSize[0] = 5; return; };
     
-	if (GameNum[0] == 7) 
-	{
-		AnimSize[0] = 2; 
-		return;
-	};
+    if (GameNum[0] == 7) 
+    {
+        AnimSize[0] = 3;
+        return;
+    };
 }
 
 void GameNumUp(uint8_t *GameNum, uint8_t *AnimSize)
@@ -423,13 +423,13 @@ void GameMenu(void)
 				pic8x16_Draw(v_AnimFrame, animation_006);
 				break;
 			};
-			case 7:
-			{
-				pic8x16_Draw(v_AnimFrame, animation_008);
-				break;
-			};
-			};
-			v_Redraw = 0;
+			 case 7:
+            {
+                pic8x16_Draw(v_AnimFrame, animation_007);
+                break;
+            };
+            };
+            v_Redraw = 0;
 		};
 
 		if (v_RunGame > 0)
