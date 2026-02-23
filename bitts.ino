@@ -14,13 +14,20 @@
 
 void setup()
 {    
+    Serial.begin(9600);
+    Serial.println("Start...");
+
     adc_Init(); 
     spi_MasterInit();
     max7219_Init();
     pkeys_Init();
-    RNDpADC(10);
-
     sound_Init();
+
+    // ТЕСТ: Зажжем один пиксель в углу
+    g_Clear();
+    g_SetPixel(0, 0); // Левый верхний угол
+    g_Update();
+    Serial.println("Pixel set. Display should show 1 dot.");
 }
 
 void loop()

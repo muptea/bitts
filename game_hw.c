@@ -220,12 +220,29 @@ void max7219_SetIntensity(uint8_t n)
 
 void max7219_Init(void)
 {
-	cbi(max7219d_CS_port,max7219d_CS_bit);
-	sbi(max7219d_CS_ddr,max7219d_CS_bit);
-	max7219_SetDecode(0); max7219_SetDecode(0); max7219_Load();
-	max7219_write(0x0B,0x07); max7219_write(0x0B,0x07); max7219_Load();
-	max7219_SetIntensity(0x0A); max7219_SetIntensity(0x0A); max7219_Load();
+	cbi(max7219d_CS_port,max7219d_CS_bit); // CS в LOW
+	sbi(max7219d_CS_ddr,max7219d_CS_bit);  // На выход
+	
+	delay(100); // Даем время на стабилизацию питания
+
+	// 1. Выключаем режим теста (чтобы всё не горело)
+	max7219_write(0x0F, 0x00); max7219_write(0x0F, 0x00); max7219_Load();
+	
+	// 2. Устанавливаем режим декодирования (0 - нет декодирования)
+	max7219_write(0x09, 0x00); max7219_write(0x09, 0x00); max7219_Load();
+	
+	// 3. Лимит сканирования (7 - все 8 строк)
+	max7219_write(0x0B, 0x07); max7219_write(0x0B, 0x07); max7219_Load();
+	
+	// 4. Яркость (ставим минимум, чтобы не сжечь USB порт)
+	max7219_write(0x0A, 0x01); max7219_write(0x0A, 0x01); max7219_Load();
+	
+	// 5. Включаем чипы (Shutdown mode -> Normal mode)
 	max7219_On(); max7219_On(); max7219_Load();
+
+    // 6. Очистим мусор при старте
+    g_Clear();
+    g_Update();
 }
 
 //Load 16 bytes
